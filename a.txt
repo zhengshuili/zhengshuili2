@@ -1,2 +1,162 @@
-sdfsr
-cygeyfg
+Visual Studio Code
+
+
+官网下载对应版本并安装
+http://git-scm.com/download
+用config命令配置用户名和用户邮箱
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+
+$ pwd  查看当前目录
+$ cd D:\zhengshuili163\gittest1  切换
+$ cd /d/zhengshuili163/gittest1
+$ git init初始化
+
+$ ls -ah查看隐藏文件
+$ git add a1.txt a2.txt
+
+$ git commit --message "这是第一次提交"
+[master (root-commit) eede36c] 这是第一次提交
+ 2 files changed, 2 insertions(+)
+ create mode 100644 a1.txt
+ create mode 100644 a2.txt
+$ git commit -m "这是第二次提交，修改a1文件"
+[master f40f9f6] 这是第二次提交，修改a1文件
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+git rm 从版本库中删除文件，不再被追踪
+$ git status查看状态  Untracked files没有被追踪的文件
+$ git diff查看对比与之前的状态
+$ git log查看历史记录  最新的最全的日志
+git log --oneline查看一条最新的
+git reflog 记录之前的每一次操作 
+git reset --hand head^  版本退回到上一个版本
+git reset --hard commitid  版本退回某个版本$ gitk查看图形记录
+$ git add -A提交所有文件   git add --all
+git reset回馈某个版本，与文本一致
+$ git reset --hard head^回馈到上一次
+$ git reset --hard head^^回馈到上上一次
+git reset --hard ID号  回馈到ID号的版本，用git log查看，仅有前几位数字
+
+工作区：我们在电脑里能看到的目录
+工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。git log -
+git 的协作功能
+git clone 原版本库目录 目标版本库目录 ， 克隆版本库在目标目录里操作 目标版本库目录没存在命令执行后会存在
+git pull  从另一版本库中获取修改 
+从原版本库中取回新的修改，将它们与克隆体中的本地修改进行对比，
+并在工作区中合并两边的修改，创建一次新的提交。这个过程就是合并（merge）
+从任意版本库中取回修改 git pull 版本库目录 master
+
+克隆版本库 克隆目录1
+1.在目录1
+git clone 目录1 目录2
+2.在目录1提交修改
+3.git pull  
+4.cd 目录2
+5.在目录2提交修改
+6.在目录2 git pull 
+7.cd 目录1
+8.在目录1 git pull 目录2 master
+
+
+git clone git://.git仓库  
+下载克隆远程文件到本地地址
+
+git rm 从版本库中删除文件，不再被追踪
+
+克隆版本库 git clone 原版本库目录 目标版本库目录从另一版本库中获取修改  
+git pull（先在两个版本库中分别修改提交）
+pull命令可从原版本库中取回新的修改，将它们与克隆体中的本地修改进行对比，并在工作区中合并两边的修改，创建一次新的提交。这个过程就是合并（merge）从任意版本库中取回修改 git pull 版本库目录 master
+
+克隆仓库的命令格式为：git clone <repo>如果我们需要克隆到指定的目录，
+命令格式：git clone <repo> <directory>repo:Git 仓库。
+directory:本地目录。比如，要克隆 Ruby 语言的 Git 
+代码仓库 Grit，可以用下面的命令：$ git clone git://github.com/schacon/grit.git执行该命令后，会在当前目录下创建一个名为grit的目录，其中包含一个 .git 的目录，用于保存下载下来的所有版本记录。
+如果要自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字：
+$ git clone git://github.com/schacon/grit.git mygrit
+
+创建共享版本库
+1.git clone  --bare 原版本库D:/git1 版本库D:git.share
+2.修改提交
+3.先克隆元版本库git11
+4.git push 版本库D:git.shar master
+5.切换克隆版本库git11
+6.git init
+7.
+
+
+
+使用push命令将提交传送给其他版本库。
+push命令只适应于那些没有开发者在上面开展具体工作的版本库。
+最好的方法是创建一个不带工作区的版本库，我们称之为裸版本库。clone命令的—bare选项git clone –bare 原版本库目录 裸版本库目录
+用push命令上载修改(推送）
+
+创建好共享版本库后，就可以使用push命令向共享版本库传送提交
+（将本地仓库的修改推送到远程仓库）。git push 共享版本库目录 master
+
+pull命令取回修改（拉回）
+让克隆版本库也得到相应的修改，我们需要在执行pull命令时配置参数指向共享版本库的路径参数。
+git pull 共享版本库的路径参数 mastergit init 
+
+
+
+
+git init 初始化
+
+
+commit message主要要说3件事：是upd（更新）、add（添加）还是del（删除）操作操作了什么文件（或者什么内容）为什么要做这个操作（或者能够解决什么bug，解决什么问题）
+
+git diff a1.txt 查看a1.txt修改前后不同
+从版本库里移除
+1git rm
+2.git commit --m
+
+git checkout -文件
+
+$ cd D:/163zsl1/git01
+
+提交
+git commit  回车
+
+出现vi编辑器 在英文状态下。按o编辑，按esc退出
+
+
+远程仓库
+
+
+1.在GitHub网站注册
+
+用户名zhengshuili
+邮箱1963750592@qq.com
+密码196375zsl
+
+github是一个基于git的代码托管平台，付费用户可以建私人仓库，
+一般的免费用户只能使用公共仓库，也就是代码要公开。Github 由Chris Wanstrath, PJ Hyett 与Tom Preston-Werner三位开发者在2008年4月创办。
+迄今拥有59名全职员工，主要提供基于git的版本托管服务。
+
+在GitHub网站https://github.com/注册账号
+2.创建仓库
+https://github.com/zhengshuili/163text01.git3.利用相关命令进行仓库管理repository仓库
+1.git init
+2.git add a.txt
+3.git commit -m "first commit"
+4.git remote add origin https://github.com/zhengshuili/163text01.git推送到版本库
+5.git push -u origin master
+6.跳出窗口，输入用户名和密码（一个机子一次，过了，就不会再出现）
+ 
+git clone https://github.com/zhengshuili/163text01.git
+一个工作区关联一个版本库
+1.git init
+git status
+git add --all
+git commit --m ""
+git log
+git remote add cjjj dizhi
+git push -u cjjj master
+README.md
+为了让别人知道说明
+
+
+克隆到
+git clone 
