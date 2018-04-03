@@ -1,0 +1,49 @@
+分支管理
+指向 commit 对象的可变指针
+Git“必杀技特性” 需要持续变动的文档
+master 作为分支的默认名字
+仓库：git init之后普通的目录下创建一个.git隐藏目录，它是git仓库。
+工作树（工作区）：git init之后原来的目录也不再是普通的文档目录了，其称为工作树。
+提交：使用git commit命令可将索引提交至仓库，这个过程称为提交，每一次提交都意味着版本在进行一次更新。git branch 分支名 创建分支
+git branch查看分支
+创建分支
+git add
+git commit
+git branch
+git branch 分支名
+git branch
+打开图形界面gitk
+HEAD指针 ，一个指向你正在工作中的本地分支的指针
+切换分支
+git checkout 分支名
+git branch查看分支
+
+
+cd 分支1add
+commit
+gitk
+合并分支
+git merge
+分支1合并当前分支2
+1.git checkout 分支1
+2.git merge 分支2      在目录分支1
+
+创建+切换分支：git checkout -b <name>
+
+合并某分支到当前分支：git merge <name>
+删除分支git branch –d  分支名
+
+多个分支修改后合并，发生冲突
+解决冲突创建分支f1并在分支上修改文件a.txt提交切换分支到master并修改a.txt提交合并f1分支到master出现冲突使用git status查看状态任何包含未解决冲突的文件都会以未合并（unmerged）的状态列出。Git 会在有冲突的文件里加入标准的冲突解决标记，可以通过它们来手工定位并解决这些冲突。
+
+最后解决冲突后再次用git status检查状态用带参数的git log也可以看到分支的合并情况：
+git log --graph --pretty=oneline --abbrev-commit
+git log --graph
+用一个有图形界面的工具来解决tijiao问题，运行?git mergetool
+wq
+！
+ctrl+C
+<< head 
+<div</div> 
+======= 
+<div/div> >>?隔开的上半部分，是?HEAD（即?master?分支，在运行?merge?命令时所切换到的分支）中的内容，下半部分是在?iss53?分支中的内容。解决冲突的办法无非是二者选其一或者由你亲自整合到一起。
